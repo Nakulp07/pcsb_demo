@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:pcsb_demo/home/bloc/home_bloc.dart';
 
 class Function_Card extends StatelessWidget {
-  Function_Card(
-      {super.key,
-      required this.card_color,
-      required this.card_icon,
-      required this.card_name,
-      required this.Height});
+  final HomeBloc homeBloc;
+  Function_Card({
+    super.key,
+    required this.card_color,
+    required this.card_icon,
+    required this.card_name,
+    required this.Height,
+    required this.homeBloc,
+  });
 
   final Color card_color;
   final IconData card_icon;
@@ -18,6 +22,15 @@ class Function_Card extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // Handle onTap here
+        if (card_name == 'Events') {
+          homeBloc.add(HomeEventsNavigationEvent());
+        } else if (card_name == 'Calender') {
+          homeBloc.add(HomeCalenderNavigationEvent());
+        } else if (card_name == 'Our Team') {
+          homeBloc.add(HomeOurTeamNavigationEvent());
+        } else {
+          homeBloc.add(HomeGalleryNavigationEvent());
+        }
       },
       child: Container(
         width: 180,

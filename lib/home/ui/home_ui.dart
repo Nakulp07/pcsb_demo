@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pcsb_demo/Event/EventUi/Event_ui.dart';
 import 'package:pcsb_demo/home/ui/card_ui.dart';
 // import 'package:bloc/bloc.dart';
 
@@ -22,6 +23,10 @@ class _HomeState extends State<Home> {
       bloc: homeBloc,
       listener: (context, state) {
         // TODO: implement listener
+        if (state is NavigatetoEventpageActionState) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: ((context) => Eventpage())));
+        }
       },
       builder: (context, state) {
         var _currentIndex = 0;
@@ -177,18 +182,22 @@ class _HomeState extends State<Home> {
                               height: 20,
                             ),
                             Function_Card(
-                                card_color: Color.fromARGB(255, 215, 215, 233),
-                                card_icon: Icons.photo_library,
-                                card_name: 'Gallery',
-                                Height: 230.0),
+                              card_color: Color.fromARGB(255, 215, 215, 233),
+                              card_icon: Icons.photo_library,
+                              card_name: 'Gallery',
+                              Height: 230.0,
+                              homeBloc: homeBloc,
+                            ),
                             SizedBox(
                               height: 20,
                             ),
                             Function_Card(
-                                card_color: Color.fromARGB(255, 176, 210, 207),
-                                card_icon: Icons.groups_2_outlined,
-                                card_name: 'Domain Heads',
-                                Height: 190.0),
+                              card_color: Color.fromARGB(255, 176, 210, 207),
+                              card_icon: Icons.groups_2_outlined,
+                              card_name: 'Our Team',
+                              Height: 190.0,
+                              homeBloc: homeBloc,
+                            ),
                             SizedBox(
                               height: 20,
                             ),
@@ -201,20 +210,24 @@ class _HomeState extends State<Home> {
                               height: 20,
                             ),
                             Function_Card(
-                                card_color:
-                                    // Color.fromARGB(255, 100, 149, 237),
-                                    Color.fromARGB(255, 211, 206, 179),
-                                card_icon: Icons.calendar_month,
-                                card_name: 'Calender',
-                                Height: 190.0),
+                              card_color:
+                                  // Color.fromARGB(255, 100, 149, 237),
+                                  Color.fromARGB(255, 211, 206, 179),
+                              card_icon: Icons.calendar_month,
+                              card_name: 'Calender',
+                              Height: 190.0,
+                              homeBloc: homeBloc,
+                            ),
                             SizedBox(
                               height: 20,
                             ),
                             Function_Card(
-                                card_color: Color.fromARGB(255, 180, 217, 240),
-                                card_icon: Icons.developer_mode,
-                                card_name: 'Developers',
-                                Height: 230.0),
+                              card_color: Color.fromARGB(255, 180, 217, 240),
+                              card_icon: Icons.event,
+                              card_name: 'Events',
+                              Height: 230.0,
+                              homeBloc: homeBloc,
+                            ),
                             SizedBox(
                               height: 20,
                             ),
