@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcsb_demo/Event/EventUi/Event_ui.dart';
 
 import 'home/ui/home_ui.dart';
 
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
           bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
         ),
       ),
-      home: Home(),
+      home: Eventpage(),
     );
   }
 }
