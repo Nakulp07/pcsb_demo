@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
           bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
         ),
       ),
-      home: Eventpage(),
+      home: Home(),
     );
   }
 }
