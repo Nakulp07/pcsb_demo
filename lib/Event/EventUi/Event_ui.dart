@@ -16,62 +16,86 @@ class _EventpageState extends State<Eventpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text('Events'),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: Container(
+        decoration: BoxDecoration(
+        gradient: LinearGradient(
+        colors: [Color(0xFF000433), Color(0xFF012d6c),Color(0xFF0159b1)], // Define your gradient colors
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+    ),
+    ),
+      child: Column(
         children: [
-          Center(
-            child: GestureDetector(
-              onTap: () {
-                print('clicked on tech events tab ');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => NonTechEvent())));
-              },
+          Expanded(
+            flex: 1,
+            child: Center(
               child: Container(
-                height: 175,
-                width: 200,
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        'https://img.freepik.com/free-vector/circuits-blue-red-gradient-digital-background_23-2148821701.jpg?w=1060&t=st=1691775249~exp=1691775849~hmac=269823c11a21219b3e9d02678740ddc99600308ebabc003dd67fa2205c0fbc42'),
-                    fit: BoxFit.cover,
+                padding: EdgeInsets.only(bottom: 15),
+                child: Align(
+                  alignment: Alignment.bottomLeft, // Align the text to bottom left
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, bottom: 20),
+                    child: Text(
+                      'Xenia Events',
+                      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.indigo,
                 ),
-                child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
-                    child: Center(child: Text('Technical'))),
               ),
             ),
           ),
-          Center(
-            child: GestureDetector(
-              onTap: () {
-                print('clicked on non tech events tab ');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => TechEvent())));
-              },
-              child: Container(
-                height: 175,
-                width: 200,
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.indigo,
+          Expanded(
+            flex: 2,
+            child: Center(
+              child: GestureDetector(
+                onTap: () {
+                  print('clicked on tech events tab ');
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => NonTechEvent())));
+                },
+                child: Container(
+                  margin: EdgeInsets.only(top: 10,bottom: 10,right: 20,left: 20),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(
+                          'https://img.freepik.com/free-vector/top-view-dark-laptop-background-template_52683-7081.jpg?w=1060&t=st=1691936046~exp=1691936646~hmac=74dcf4955b8714831305edb6c6f3b2975e7f833f06b141071a6c33972133d338'),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+
+                  ),
+                  child: Center(child: Text('Technical',style: TextStyle(fontSize: 30),)),
                 ),
-                child: Center(child: Text(' vedant Technical')),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Center(
+              child: GestureDetector(
+                onTap: () {
+                  print('clicked on non tech events tab ');
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => TechEvent())));
+                },
+                child: Container(
+                  margin: EdgeInsets.only(top: 10,bottom: 10,right: 20,left: 20),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage('https://img.freepik.com/free-photo/old-fashioned-flat-lay-with-letters-writing-accessories_155003-3599.jpg?w=1060&t=st=1692025680~exp=1692026280~hmac=b17a91404d8caba100d8440b32ca504627b92b4868d30786e1c42f7823ee0bdb'),
+                      fit: BoxFit.cover
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+
+                  ),
+                  child: Center(child: Text(' Non Technical',style: TextStyle(fontSize: 30),)),
+                ),
               ),
             ),
           ),
         ],
       ),
+        ),
     );
   }
 }
