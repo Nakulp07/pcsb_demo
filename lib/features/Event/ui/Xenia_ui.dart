@@ -33,7 +33,8 @@ class _EventListPageState extends State<EventListPage> {
 
   void _buildXeniaTechEventContainers() {
     setState(() {
-      eventContainers = techEventsData.TechEvents.map((event) => Eventtile()).toList();
+      eventContainers =
+          techEventsData.TechEvents.map((event) => Eventtile()).toList();
     });
   }
 
