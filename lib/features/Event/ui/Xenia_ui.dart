@@ -3,6 +3,7 @@ import 'package:pcsb_demo/data/xenia_events_data.dart';
 import 'package:pcsb_demo/features/Event/models/event_data_model.dart';
 import 'package:pcsb_demo/features/home/ui/card_ui.dart';
 import 'card_ui.dart';
+import 'package:pcsb_demo/features/Event/ui/event_tile_widget.dart';
 
 class XeniaEvent extends StatefulWidget {
   const XeniaEvent({super.key});
@@ -32,12 +33,7 @@ class _EventListPageState extends State<EventListPage> {
 
   void _buildXeniaTechEventContainers() {
     setState(() {
-      eventContainers = techEventsData.TechEvents.map((event) => Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.symmetric(vertical: 5),
-            color: Colors.blue,
-            child: Text(event.title, style: TextStyle(color: Colors.white)),
-          )).toList();
+      eventContainers = techEventsData.TechEvents.map((event) => Eventtile()).toList();
     });
   }
 
@@ -65,6 +61,8 @@ class _EventListPageState extends State<EventListPage> {
               ElevatedButton(
                 onPressed: _buildXeniaTechEventContainers,
                 child: Text('Tech Events'),
+
+
               ),
               SizedBox(width: 20),
               ElevatedButton(
