@@ -3,8 +3,14 @@ import 'package:pcsb_demo/features/Event/models/event_data_model.dart';
 class XeniaNonTechEventsData {
   late EventDataModel eventDataModel;
   List<EventDataModel> NonTechEvents = [
-    EventDataModel('Non-Tech Event 1', 'Non-Tech'),
-    EventDataModel('Non-Tech Event 2', 'Non-Tech'),
+    EventDataModel('Campus To Corporate', 'Non-Tech'),
+    EventDataModel('Snap Hunt', 'Non-Tech'),
+    EventDataModel('The Gift of Gab', 'Non-Tech'),
+    EventDataModel('Game Zone', 'Non-Tech'),
+    EventDataModel('Dream Team', 'Non-Tech'),
+    EventDataModel('Shark Tank', 'Non-Tech'),
+    EventDataModel('Couch Potato', 'Non-Tech'),
+    EventDataModel('Xe-Natus', 'Non-Tech'),
     // Add more non-tech events
   ];
 }
