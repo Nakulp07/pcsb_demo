@@ -16,6 +16,9 @@ class _EventpageState extends State<Eventpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Events'),
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -40,7 +43,7 @@ class _EventpageState extends State<Eventpage> {
                 },
                 child: Container(
                   margin:
-                      EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 20),
+                      EdgeInsets.only(top: 20, bottom: 20, right: 20, left: 20),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(
@@ -69,7 +72,7 @@ class _EventpageState extends State<Eventpage> {
                 },
                 child: Container(
                   margin:
-                      EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 20),
+                      EdgeInsets.only(top: 20, bottom: 20, right: 20, left: 20),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                         image: NetworkImage(
@@ -95,7 +98,7 @@ class _EventpageState extends State<Eventpage> {
                 },
                 child: Container(
                   margin:
-                      EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 20),
+                      EdgeInsets.only(top: 20, bottom: 20, right: 20, left: 20),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                         image: NetworkImage(

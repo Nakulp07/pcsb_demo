@@ -12,8 +12,16 @@ class XeniaNonTechEventsData {
 class XeniaTechEventsData {
   late EventDataModel eventDataModel;
   List<EventDataModel> TechEvents = [
-    EventDataModel('Tech Event 1', 'Tech'),
-    EventDataModel('Tech Event 2', 'Tech'),
+    EventDataModel('Codestrike', 'Tech'),
+    EventDataModel('Ninja Coding', 'Tech'),
+    EventDataModel('Design Maestro', 'Tech'),
+    EventDataModel('MineCraft Build Battles', 'Tech'),
+    EventDataModel(' Xenathon (Mini Hackathon)', 'Tech'),
+    EventDataModel('Circuitron', 'Tech'),
+    EventDataModel('Codestrike', 'Tech'),
+    EventDataModel('Ninja Coding', 'Tech'),
+    EventDataModel('Innoveiren (Project Presentation)', 'Tech'),
+    EventDataModel('Data Cup', 'Tech'),
     // Add more tech events
   ];
 }
