@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pcsb_demo/Event/EventUi/Event_ui.dart';
 
-import 'home/ui/home_ui.dart';
+import 'features/home/ui/home_ui.dart';
 
 void main() {
   runApp(const MyApp());

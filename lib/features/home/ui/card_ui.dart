@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pcsb_demo/home/bloc/home_bloc.dart';
+import 'package:pcsb_demo/features/home/bloc/home_bloc.dart';
 
 class Function_Card extends StatelessWidget {
   final HomeBloc homeBloc;
@@ -8,14 +8,12 @@ class Function_Card extends StatelessWidget {
     required this.card_color,
     required this.card_icon,
     required this.card_name,
-    required this.Height,
     required this.homeBloc,
   });
 
   final Color card_color;
   final IconData card_icon;
   final String card_name;
-  final double Height;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +32,6 @@ class Function_Card extends StatelessWidget {
       },
       child: Container(
         width: 180,
-        height: Height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: card_color,
