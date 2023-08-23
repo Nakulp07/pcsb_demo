@@ -33,7 +33,8 @@ class _EventListPageState extends State<EventListPage> {
 
   void _buildXeniaTechEventContainers() {
     setState(() {
-      eventContainers = techEventsData.TechEvents.map((event) => Eventtile()).toList();
+      eventContainers =
+          techEventsData.TechEvents.map((event) => Eventtile()).toList();
     });
   }
 
@@ -61,8 +62,6 @@ class _EventListPageState extends State<EventListPage> {
               ElevatedButton(
                 onPressed: _buildXeniaTechEventContainers,
                 child: Text('Tech Events'),
-
-
               ),
               SizedBox(width: 20),
               ElevatedButton(
@@ -73,13 +72,22 @@ class _EventListPageState extends State<EventListPage> {
           ),
           SizedBox(height: 20),
           Expanded(
-            child: ListView.builder(
-              itemCount: eventContainers.length,
-              itemBuilder: (context, index) {
-                return eventContainers[index];
-              },
-            ),
-          ),
+              child: GridView.count(
+            primary: false,
+            padding: const EdgeInsets.all(20),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: 2,
+            children: eventContainers,
+          )
+
+              // ListView.builder(
+              //   itemCount: eventContainers.length,
+              //   itemBuilder: (context, index) {
+              //     return eventContainers[index];
+              //   },
+              // ),
+              ),
         ],
       ),
     );
