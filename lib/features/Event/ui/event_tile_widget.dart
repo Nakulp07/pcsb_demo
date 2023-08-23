@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Eventtile extends StatefulWidget {
   const Eventtile({Key? key}) : super(key: key);
@@ -17,15 +18,11 @@ class _EventtileState extends State<Eventtile> {
         width: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(colors: [
-            Color(0xff23262e),Color(0xFF212025),Color(0xFF1a1a1e)
-
-          ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+          color:Color.fromRGBO(42,45,52,0.9),
+          // Colors.ARGB(42,45,52,50),
           ),
         ),
-      ),
+
 
     );
   }

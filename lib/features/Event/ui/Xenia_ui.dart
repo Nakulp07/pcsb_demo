@@ -53,42 +53,54 @@ class _EventListPageState extends State<EventListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Xenia')),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: _buildXeniaTechEventContainers,
-                child: Text('Tech Events'),
-              ),
-              SizedBox(width: 20),
-              ElevatedButton(
-                onPressed: _buildXeniaNonTechEventContainers,
-                child: Text('Non-Tech Events'),
-              ),
-            ],
+      appBar: AppBar(title: Text('Xenia',style: TextStyle(color: Colors.white),),
+      backgroundColor:  Color(0xFF26252e),),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF26252e),
+              Color(0xFF1e1e22),
+              Color(0xFF1a1a1e),
+            ], // Define your gradient colors
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
-          SizedBox(height: 20),
-          Expanded(
-              child: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(20),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2,
-            children: eventContainers,
-          )
+        ),
+        child: Column(
 
-              // ListView.builder(
-              //   itemCount: eventContainers.length,
-              //   itemBuilder: (context, index) {
-              //     return eventContainers[index];
-              //   },
-              // ),
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFcccccc),
+                  ),
+                  onPressed: _buildXeniaTechEventContainers,
+                  child: Text('Tech Events'),
+                ),
+                SizedBox(width: 20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFcccccc),
+                  ),
+                  onPressed: _buildXeniaNonTechEventContainers,
+                  child: Text('Non-Tech Events'),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                itemCount: eventContainers.length,
+                itemBuilder: (context, index) {
+                  return eventContainers[index];
+                },
               ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
