@@ -41,12 +41,7 @@ class _EventListPageState extends State<EventListPage> {
   void _buildXeniaNonTechEventContainers() {
     setState(() {
       eventContainers =
-          nonTechEventsData.NonTechEvents.map((event) => Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.symmetric(vertical: 5),
-                color: Colors.green,
-                child: Text(event.title, style: TextStyle(color: Colors.white)),
-              )).toList();
+          nonTechEventsData.NonTechEvents.map((event) => Eventtile()).toList();
     });
   }
 
@@ -92,12 +87,15 @@ class _EventListPageState extends State<EventListPage> {
             ),
             SizedBox(height: 20),
             Expanded(
-              child: ListView.builder(
-                itemCount: eventContainers.length,
-                itemBuilder: (context, index) {
-                  return eventContainers[index];
-                },
-              ),
+              child:
+              GridView.count(
+                primary: false,
+                padding: const EdgeInsets.all(20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 2,
+                children: eventContainers,
+              )
             ),
           ],
         ),
