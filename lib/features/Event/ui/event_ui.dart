@@ -23,8 +23,8 @@ class _EventpageState extends State<Eventpage> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFF26252e),
-              Color(0xFF1e1e22),
+              Color(0xFF23262e),
+              Color(0xFF222226),
               Color(0xFF1a1a1e),
 
             ], // Define your gradient colors
