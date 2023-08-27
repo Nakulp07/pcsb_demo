@@ -13,29 +13,13 @@ class XeniaNonTechEventsData {
     EventDataModel('Xe-Natus', 'Non-Tech'),
     // Add more non-tech events
   ];
-  // static List<Map<String, dynamic>> techEvents = [
-//   {
-//   'title': 'Campus To Corporate',
-//   'desc': 'tech event',
-// },
-// {
-// 'title': 'Campus To Corporate',
-// 'desc': 'tech event',
-// },
-// {
-// 'title': 'Campus To Corporate',
-// 'desc': 'tech event',
-// },
-// {
-// 'title': 'Campus To Corporate',
-// 'desc': 'tech event',
-// },
 }
 
 class XeniaTechEventsData {
   late EventDataModel eventDataModel;
   static List<EventDataModel> TechEvents = [
-    EventDataModel('Codestrike', 'Tech'),
+    EventDataModel('Codestrike',
+        'Immerse yourself in cutting-edge innovation at our colleges dynamic tech event, where visionary speakers and hands-on workshops converge to explore the limitless horizons of tech'),
     EventDataModel('Ninja Coding', 'Tech'),
     EventDataModel('Design Maestro', 'Tech'),
     EventDataModel('MineCraft Build Battles', 'Tech'),

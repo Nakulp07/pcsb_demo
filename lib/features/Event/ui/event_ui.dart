@@ -1,6 +1,4 @@
 import 'dart:ui';
-
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:pcsb_demo/features/Event/ui/Xenia_ui.dart';
@@ -17,7 +15,9 @@ class _EventpageState extends State<Eventpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text('Events'),
+        backgroundColor: Color(0xFF23262e),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -26,7 +26,6 @@ class _EventpageState extends State<Eventpage> {
               Color(0xFF23262e),
               Color(0xFF222226),
               Color(0xFF1a1a1e),
-
             ], // Define your gradient colors
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
