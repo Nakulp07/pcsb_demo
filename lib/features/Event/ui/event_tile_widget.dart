@@ -26,57 +26,7 @@ class Eventtile extends StatelessWidget {
         showDialog(
             context: context,
             builder: (context) {
-              return Dialog(
-                backgroundColor: Color.fromRGBO(207, 176, 242, 1),
-                shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(20.0)), //this right here
-                child: Container(
-                  height: 400,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          title,
-                          style: TextStyle(fontSize: 30),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          description,
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        ElevatedButton(
-                          onPressed: null,
-                          // _launchURL('https://www.pcsbxenia.com/events'),
-                          child: Text(
-                            'Website Link',
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              );
-              // AlertDialog(
-              //   title: Text(title),
-              //   content: Text(description),
-              //   actions: [
-              //     TextButton(
-              //         onPressed: () {
-              //           Navigator.pop(context);
-              //         },
-              //         child: Text('back'))
-              //   ],
-              // );
+              return PopupDialog(title: title, description: description);
             });
       },
       child: Stack(
