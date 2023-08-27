@@ -3,29 +3,72 @@ import 'package:flutter/material.dart';
 import 'package:pcsb_demo/data/xenia_events_data.dart';
 import 'package:pcsb_demo/features/Event/models/event_data_model.dart';
 
-class Eventtile extends StatefulWidget {
-  const Eventtile({Key? key}) : super(key: key);
+class Eventtile extends StatelessWidget {
+  const Eventtile({Key? key, required this.title}) : super(key: key);
 
-  @override
-  State<Eventtile> createState() => _EventtileState();
-}
+  final String title;
 
-class _EventtileState extends State<Eventtile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Container(
-        margin: EdgeInsets.all(10),
-        height: 200,
-        width: 50,
-        child: Center(
-            child: Text('Xenia event', style: TextStyle(color: Colors.white))),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: Color.fromRGBO(42, 45, 52, 0.9),
-          // Colors.ARGB(42,45,52,50),
-        ),
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: <Widget> [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 60),
+              Container(
+                height: 100,
+                width: 150,
+                decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Color.fromRGBO(42, 45, 52, 0.9),
+              ),
+                alignment: Alignment.bottomCenter,
+                padding: EdgeInsets.only(bottom: 15),
+                child: Text(
+                  title,
+                  style: TextStyle(color: Colors.white,fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+        Positioned(child:Container(
+          margin: EdgeInsets.all(10),
+          height: 90,
+          width: 90,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Color.fromRGBO(42, 45, 52, 0.9),
+            image: DecorationImage(
+              image: NetworkImage(
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/tech-event-motion-poster-design-template-93679873ffd20b2872af4da04c4cbe5e.jpg?ts=1567082214'), // Replace with your image URL
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),),],
       ),
     );
   }
 }
+
+// child: Center(
+// child: Column(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Image.network(
+// 'https://example.com/your_image_url.png', // Replace with your image URL
+// width: 100, // Set the desired width
+// height: 100, // Set the desired height
+// fit: BoxFit.cover,
+// ),
+// SizedBox(height: 10),
+// Text(
+// 'Xenia event',
+// style: TextStyle(color: Colors.white),
+// ),
+// ],
+// ),
+// ),

@@ -2,7 +2,7 @@ import 'dart:ui';
 
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pcsb_demo/features/Event/ui/NonTech_Event_ui.dart';
+
 import 'package:pcsb_demo/features/Event/ui/Xenia_ui.dart';
 
 class Eventpage extends StatefulWidget {
