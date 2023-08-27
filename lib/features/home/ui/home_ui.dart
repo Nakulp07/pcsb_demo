@@ -177,7 +177,7 @@ class _HomeState extends State<Home> {
                       Column(
                         children: <Widget>[
                           Expanded(
-                            flex: 7,
+                            flex: 1,
                             child: Container(
                               padding: EdgeInsets.all(7),
                               child: Function_Card(
@@ -189,7 +189,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Expanded(
-                            flex: 6,
+                            flex: 1,
                             child: Container(
                               padding: EdgeInsets.all(7),
                               child: Function_Card(
@@ -205,7 +205,7 @@ class _HomeState extends State<Home> {
                       Column(
                         children: <Widget>[
                           Expanded(
-                            flex: 6,
+                            flex: 1,
                             child: Container(
                               padding: EdgeInsets.all(7),
                               child: Function_Card(
@@ -219,7 +219,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Expanded(
-                            flex: 7,
+                            flex: 1,
                             child: Container(
                               padding: EdgeInsets.all(7),
                               child: Function_Card(

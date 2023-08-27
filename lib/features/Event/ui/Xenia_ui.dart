@@ -51,16 +51,17 @@ class _EventListPageState extends State<EventListPage> {
 
   Color _currentColor = Colors.blue;
 
-  bool isTechpressed=false;
-  bool isNonTechpressed=false;
+  bool isTechpressed = false;
+  bool isNonTechpressed = false;
 
-  void toggleTech(){
+  void toggleTech() {
     setState(() {
       isTechpressed = true;
       isNonTechpressed = false;
     });
   }
-  void toggleNontech(){
+
+  void toggleNontech() {
     setState(() {
       isNonTechpressed = true;
       isTechpressed = false;
@@ -72,11 +73,19 @@ class _EventListPageState extends State<EventListPage> {
     toggleTech();
     _buildXeniaTechEventContainers();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Xenia',style: TextStyle(color: Colors.white,fontSize: 25),),
-      backgroundColor:  Color(0xFF26252e),),
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 0,
+        title: Text(
+          'Xenia',
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
+        backgroundColor: Color(0xFF26252e),
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -90,52 +99,79 @@ class _EventListPageState extends State<EventListPage> {
           ),
         ),
         child: Column(
-
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap:() {toggleTech();
+                  onTap: () {
+                    toggleTech();
                     _buildXeniaTechEventContainers();
-                  },// Match the BorderRadius
+                  }, // Match the BorderRadius
                   child: Container(
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: isTechpressed? Color.fromRGBO(207 ,176 ,242, 0.9) : Color.fromRGBO(42, 45, 52, 0.9),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: isTechpressed
+                          ? Color.fromRGBO(207, 176, 242, 0.9)
+                          : Color.fromRGBO(42, 45, 52, 0.9),
+                    ),
                     width: 160,
                     height: 40,
-                    child: Center(child: Text('Tech Event', style: TextStyle(color: Colors.white))),
+                    child: Center(
+                        child: Text('Tech Event',
+                            style: TextStyle(color: Colors.white))),
                   ),
                 ),
                 SizedBox(width: 20),
                 InkWell(
-                  onTap: (){toggleNontech();
+                  onTap: () {
+                    toggleNontech();
                     _buildXeniaNonTechEventContainers();
-                    },
-                  borderRadius: BorderRadius.circular(20), // Match the BorderRadius
+                  },
+                  borderRadius:
+                      BorderRadius.circular(20), // Match the BorderRadius
                   child: Container(
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: isNonTechpressed? Color.fromRGBO(207 ,176 ,242, 0.9) : Color.fromRGBO(42, 45, 52, 0.9),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: isNonTechpressed
+                          ? Color.fromRGBO(207, 176, 242, 0.9)
+                          : Color.fromRGBO(42, 45, 52, 0.9),
+                    ),
                     // color: isNonTechpressed? Colors.green : Colors.blue,
                     width: 160,
                     height: 40,
-                    child: Center(child: Text('Non-Tech Event', style: TextStyle(color: Colors.white))),
+                    child: Center(
+                        child: Text('Non-Tech Event',
+                            style: TextStyle(color: Colors.white))),
                   ),
                 ),
               ],
             ),
             SizedBox(height: 20),
             Expanded(
-              child:GridView.builder(gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
-                  childAspectRatio: 1,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,), itemCount: XeniaNonTechEventsData.NonTechEvents.length,
-              itemBuilder: (context,index){
-                if(current_tab == 'tech') return Eventtile(title: XeniaTechEventsData.TechEvents[index].title);
-                else if(current_tab == 'non-tech') {
-                  return Eventtile(title: XeniaNonTechEventsData.NonTechEvents[index].title);
+                child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              itemCount: XeniaNonTechEventsData.NonTechEvents.length,
+              itemBuilder: (context, index) {
+                if (current_tab == 'tech')
+                  return Eventtile(
+                      title: XeniaTechEventsData.TechEvents[index].title,
+                      description:
+                          XeniaTechEventsData.TechEvents[index].category);
+                else if (current_tab == 'non-tech') {
+                  return Eventtile(
+                    title: XeniaNonTechEventsData.NonTechEvents[index].title,
+                    description:
+                        XeniaNonTechEventsData.NonTechEvents[index].category,
+                  );
                 }
-              },)
-            ),
+              },
+            )),
           ],
         ),
       ),
