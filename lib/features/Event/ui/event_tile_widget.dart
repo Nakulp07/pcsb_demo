@@ -41,8 +41,10 @@ class Eventtile extends StatelessWidget {
                 height: 100,
                 width: 150,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(20),
                   color: Color.fromRGBO(42, 45, 52, 0.9),
+                  //  Color.fromRGBO(38, 46, 60, 1)
+                  // Color(0xFF263242),
                 ),
                 alignment: Alignment.bottomCenter,
                 padding: EdgeInsets.only(bottom: 15),

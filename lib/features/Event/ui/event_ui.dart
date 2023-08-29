@@ -17,15 +17,18 @@ class _EventpageState extends State<Eventpage> {
       appBar: AppBar(
         elevation: 0,
         title: Text('Events'),
-        backgroundColor: Color(0xFF23262e),
+        backgroundColor: Color(0xFF161421),
+        //  Color(0xFF23262e),
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFF23262e),
-              Color(0xFF222226),
-              Color(0xFF1a1a1e),
+              // Color(0xFF23262e),
+              // Color(0xFF222226),
+              // Color(0xFF1a1a1e),
+              Color(0xFF161421),
+              Color(0xFF17141f),
             ], // Define your gradient colors
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

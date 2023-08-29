@@ -84,15 +84,18 @@ class _EventListPageState extends State<EventListPage> {
           'Xenia',
           style: TextStyle(color: Colors.white, fontSize: 25),
         ),
-        backgroundColor: Color(0xFF26252e),
+        backgroundColor: Color(0xFF161421),
+        // Color(0xFF26252e),
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFF26252e),
-              Color(0xFF1e1e22),
-              Color(0xFF1a1a1e),
+              // Color(0xFF26252e),
+              // Color(0xFF1e1e22),
+              // Color(0xFF1a1a1e),
+              Color(0xFF161421),
+              Color(0xFF17141f),
             ], // Define your gradient colors
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -112,7 +115,9 @@ class _EventListPageState extends State<EventListPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: isTechpressed
-                          ? Color.fromRGBO(207, 176, 242, 0.9)
+                          ? Color(0xFFe3b28d)
+                          //  Color.fromRGBO(207, 176, 242, 0.9)
+                          // : Color(0xFF283142)
                           : Color.fromRGBO(42, 45, 52, 0.9),
                     ),
                     width: 160,
@@ -134,7 +139,8 @@ class _EventListPageState extends State<EventListPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: isNonTechpressed
-                          ? Color.fromRGBO(207, 176, 242, 0.9)
+                          ? Color(0xFFe3b28d)
+                          //  Color.fromRGBO(207, 176, 242, 0.9)
                           : Color.fromRGBO(42, 45, 52, 0.9),
                     ),
                     // color: isNonTechpressed? Colors.green : Colors.blue,

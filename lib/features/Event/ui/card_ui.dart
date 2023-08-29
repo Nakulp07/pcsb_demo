@@ -9,7 +9,8 @@ class PopupDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: Color.fromRGBO(207, 176, 242, 1),
+      backgroundColor: Color.fromARGB(255, 231, 184, 148),
+      //  Color.fromRGBO(207, 176, 242, 1),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0)), //this right here
       child: Container(
